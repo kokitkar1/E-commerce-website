@@ -3,14 +3,19 @@ import { toast } from 'react-hot-toast'
 import { NavLink, Link} from 'react-router-dom'
 // import {GiShoppingBag} from 'react-icons/gi'
 import { useAuth } from '../../context/auth'
+import { useCart } from '../../context/cart'
 import SearchInput from '../Form/SearchInput'
 import useCategory from '../../hooks/useCategory'
+import { Badge } from 'antd'
+
+
 
 
 
 const Header = () => {
 
   const [auth,setAuth] = useAuth();
+  const [cart] = useCart();
 
   const categories = useCategory();
 
@@ -44,7 +49,7 @@ const Header = () => {
             <li>
             <Link className="dropdown-item" to={"/categories"} >All Categories</Link>
             </li>
-          {categories?.map(c => (
+          {categories?.map((c) => (
             <li>
               <Link className="dropdown-item" to={`/category/${c.slug}`} >{c.name}</Link>
             </li>
@@ -93,7 +98,9 @@ const Header = () => {
 
 
         <li className="nav-item">
-          <NavLink to="/cart" className="nav-link">Cart (0)</NavLink>
+          <Badge count= {cart?.length} showZero>
+            <NavLink to="/cart" className="nav-link">Cart</NavLink>
+          </Badge>
         </li>
         {/* <li className="nav-item">
           <NavLink to="/" className="nav-link disabled">Disabled</NavLink>
