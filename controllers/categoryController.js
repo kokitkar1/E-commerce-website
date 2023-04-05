@@ -1,5 +1,6 @@
 import slugify from "slugify";
 import categoryModel from "../models/categoryModel.js";
+import orderModel from "../models/orderModel.js";
 
 export const createCategoryController = async (req,res)=>{
     try {
@@ -140,4 +141,8 @@ export const deleteCategoryController = async (req,res) => {
             error,
         }) 
     }
-}
+};
+
+
+
+
