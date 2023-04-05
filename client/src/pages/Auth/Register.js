@@ -39,7 +39,7 @@ const Register = () => {
 
 
   return (
-    <Layout title={"Register - Ecommerce App"}>
+    <Layout title={"Register - E-wish"}>
         <div className="form-container" style={{ minHeight: "90vh" }}>
 
         <form onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ const Register = () => {
 
                     <div className="mb-3">
                         {/* <label htmlFor="exampleInputName" className="form-label">Address</label> */}
-                        <input value={answer} onChange={(e)=> setAnswer(e.target.value)} type="text" className="form-control" id="exampleInputEmail1" placeholder='What is Your Favorite Sport Name?' required />
+                        <input value={answer} onChange={(e)=> setAnswer(e.target.value)} type="text" className="form-control" id="exampleInputEmail1" placeholder='Your Favorite Sport Name?' required />
                         {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
                     </div>   
 
@@ -84,8 +84,14 @@ const Register = () => {
                         <input onChange={(e)=> setName(e.target.value)} type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                     </div> */}
-
+                    <div className="mb-3">
                     <button  type="submit" className="btn btn-primary">REGISTER</button>
+                    </div>
+
+                    <div className="mb-3">
+                    <p className="paragraph-text" >Do have Account <a href="/login">Login</a> </p>
+                    </div>
+                    
                 </form>
         </div>
     </Layout>

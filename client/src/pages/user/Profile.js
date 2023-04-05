@@ -55,7 +55,7 @@ const Profile = () => {
 
 
   return (
-    <Layout title={"Your Profile"}>
+    <Layout title={"Your Profile - E wish"}>
 
         <div className="container-fluid p-3 m-3 dashboard">
             <div className="row">

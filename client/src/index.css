@@ -18,6 +18,7 @@
   line-height: 26px;
   text-transform: uppercase;
   box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
   border-bottom: 0px solid gray !important;
 }
 
@@ -35,10 +36,27 @@
   letter-spacing: 3px;
 }
 
+.search-form {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.search-form input {
+  border: 1px solid;
+  border-radius: 10px;
+}
+.search-form button {
+  background-color: #76d5bd;
+  border-radius: 0;
+  color: white;
+  border-radius: 10px;
+}
+
+
 /*------------- Footer CSS ------------*/
 .footer{
-  color: white;
+  color: rgb(83, 173, 142);
   padding: 25px;
+  background: -webkit-linear-gradient(to right,#434343,#000000);
   background: linear-gradient(to right, #434343, #000000);
 }
 
@@ -49,9 +67,9 @@
 }
 
 .footer a:hover{
-  color: #ffefba;
-  border-bottom: 1px solid #ffefba;
-  /* font-size: 18px; */
+  color: #dcc67e;
+  border-bottom: 1px solid #7c6108;
+  font-size: 18px;
 }
 
 
@@ -115,3 +133,26 @@
   color: black imo !important;
 }
 
+
+.cat-btn {
+  padding: 40px 0px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.cat-btn:hover {
+  background-color: #434343;
+  color: white;
+}
+
+
+/* For Dashboard CSS */
+
+.dashboard {
+  margin-top: 100px !important;
+}
+
+.dashboard-menu h4 {
+  background-color: #434343 !important;
+  color: white;
+  padding: 20px 0px;
+}

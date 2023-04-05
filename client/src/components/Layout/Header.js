@@ -36,7 +36,7 @@ const Header = () => {
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <Link to="/" className="navbar-brand"> 🛒 Ecommerce App</Link>
+      <Link to="/" className="navbar-brand" style={{color: "green"}}> 🛒E-Wi$h</Link>
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <SearchInput />
         <li className="nav-item">
@@ -97,9 +97,9 @@ const Header = () => {
         }
 
 
-        <li className="nav-item">
-          <Badge count= {cart?.length} showZero>
-            <NavLink to="/cart" className="nav-link">Cart</NavLink>
+        <li className="nav-item dropdown">
+          <Badge count= {cart?.length} showZero >
+            <NavLink to="/cart" className="nav-link ">Cart</NavLink>
           </Badge>
         </li>
         {/* <li className="nav-item">

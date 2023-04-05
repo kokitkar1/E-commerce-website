@@ -6,6 +6,8 @@ import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import {useCart} from "../context/cart"
 import { toast } from 'react-hot-toast';
+import { AiOutlineReload } from "react-icons/ai";
+import "../styles/Homepage.css";
 
 
 const HomePage = () => {
@@ -131,11 +133,36 @@ const HomePage = () => {
 
 
   return (
-    <Layout title={"All Products - Best Offers"}>
-        <div className="row mt-3">
-          <div className="col-md-2">
+    <Layout title={"All Products - Best Offers E wish"}>
+      {/* banner image */}
+      {/* <img src="/images/banner.png" className="banner-img" alt="banner_image" width={"100%"} /> */}
+      {/* banner image */}
+
+        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active" data-bs-interval="10000">
+              <img src="/images/ban1.jpg" className="d-block w-100" alt="..." style={{width: 100, height: 500}}/>
+            </div>
+            <div className="carousel-item" data-bs-interval="2000">
+              <img src="/images/ban2.jpg" className="d-block w-100" alt="..." style={{width: 100, height: 500}} />
+            </div>
+            <div className="carousel-item" >
+              <img src="/images/ban3.jpg" className="d-block w-100" alt="..." style={{width: 100, height: 500}} />
+            </div>
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="visually-hidden">Next</span>
+        </button>
+        </div>
 
 
+        <div className="container-fluid row mt-3 home-page">
+          <div className="col-md-3 filters">
             <h4 className="text-center">Filter By Category</h4>
             <div className="d-flex flex-column">
             {categories?.map((c) => (
@@ -167,22 +194,29 @@ const HomePage = () => {
             <h1 className="text-center">All Products</h1>
             <div className="d-flex flex-wrap">
             {products?.map((p) => (
-                        <div className="card m-2" style={{width: '18rem'}}>
+                        <div className="card m-2" key={p._id}>
                             <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
                             <div className="card-body">
+                            <div className="card-name-price">
                                 <h5 className="card-title">{p.name}</h5>
-                                <p className="card-text">{p.description.substring(0,30)}...</p>
-                                <p className="card-text">$ {p.price}</p>
-                                <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)} >More Details</button>
-                                <button class="btn btn-secondary ms-1" onClick={() => {setCart([...cart,p]); localStorage.setItem('cart', JSON.stringify([...cart,p])); toast.success('Item Added To Cart')}} >ADD TO CART</button>
+                                <h5 className="card-title card-price">{p.price.toLocaleString("en-IN", {style: "currency",currency: "INR",})}</h5>
+                            </div>    
+                                <p className="card-text">{p.description.substring(0,60)}...</p>
+                                {/* <p className="card-text">$ {p.price}</p> */}
+                                <div className="card-name-price">
+                                  <button className="btn btn-info ms-1" onClick={() => navigate(`/product/${p.slug}`)}> More Details</button>
+                                  <button className="btn btn-dark ms-1" onClick={() => {setCart([...cart, p]);localStorage.setItem("cart",JSON.stringify([...cart, p]));toast.success("Item Added to cart");}}>ADD TO CART</button>
+                                </div>    
+                                {/* <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)} >More Details</button>
+                                <button class="btn btn-secondary ms-1" onClick={() => {setCart([...cart,p]); localStorage.setItem('cart', JSON.stringify([...cart,p])); toast.success('Item Added To Cart')}} >ADD TO CART</button> */}
                             </div>
                         </div>
                     ))}
             </div>
             <div className='m-2 p-3'>
               {products && products.length < total && (
-                <button className='btn btn-warning' onClick={(e)=>{e.preventDefault(); setPage(page+1);}}>
-                  {loading ? "Loading..." : "Loadmore"}
+                <button className='btn loadmore' onClick={(e)=>{e.preventDefault(); setPage(page+1);}}>
+                  {loading ? ("Loading..." ):(<> {" "} Loadmore <AiOutlineReload /> </>)}
                 </button>
               )}
             </div>

@@ -1,6 +1,6 @@
 /*------------- Register page Css ----------- */
-.form-container {
-    margin-top: 60px;
+  .form-container {
+    margin-top: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,15 +31,16 @@
   
   .form-container form button {
     border: 1px solid black;
-    border-radius: 0;
-    background-color: #000;
-    color: white;
+    border-radius: 15px;
+    background-color: #16c196;
+    color: rgb(7, 0, 0);
     width: 250px;
   }
   
   .form-container form button:hover {
-    border: 1px solid black;
-    background: #000000; /* fallback for old browsers */
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 13px;
+    background: #58a0c9 !important; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
       #434343,
@@ -51,6 +52,12 @@
       #000000
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+
+  .form-container form a{
+    text-decoration: none;
+    color: rgb(9, 131, 80);
+  }
+  
   
   .forgot-btn {
     background-color: #434343a4 !important;
@@ -60,4 +67,11 @@
   .forgot-btn:hover {
     color: white !important;
   }
+
+
+  .paragraph-text{
+    text-decoration: none !important;
+    font-weight: bold;
+    color: rgb(33, 3, 44) !important;
+ }
   

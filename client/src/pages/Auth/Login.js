@@ -44,8 +44,8 @@ const Login = () => {
 
 
   return (
-    <Layout title={"Login - Ecommerce App"}>
-        <div className="form-container" style={{ minHeight: "90vh" }}>
+    <Layout title={"Login - E-wish"}>
+        <div className="form-container" style={{ minHeight: "80vh" }}>
         <form onSubmit={handleSubmit}>
                     <h4 className="title">Login</h4>
 
@@ -59,12 +59,20 @@ const Login = () => {
                         {/* <label htmlFor="exampleInputPassword1" className="form-label">Password</label> */}
                         <input value={password} onChange={(e)=> setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" placeholder='Enter Your Password' required />
                     </div>
-                    
+
                     <div className="mb-3">
-                    <button type="button" className="btn btn-primary" onClick={()=>{navigate ("/forgot-password")}}>Forgot Password</button>
+                    <button type="submit" className="btn btn-primary">LOGIN</button>
                     </div>
 
-                    <button type="submit" className="btn btn-primary">LOGIN</button>
+                    
+                    <div className="mb-3">
+                    <p className="paragraph-text1" > <a href="/forgot-password">Forgot Password</a></p>
+                    <p className="paragraph-text">Don't have Account <a href="/register"> Register</a></p>
+                    </div>
+
+                    {/* <div className="mb-3">
+                    <button type="text" className="btn btn-primary" onClick={()=>{navigate ("/forgot-password")}}>Forgot Password</button>
+                    </div> */}
                 </form>
         </div>
     </Layout>

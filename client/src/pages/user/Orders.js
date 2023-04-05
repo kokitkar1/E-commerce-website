@@ -29,9 +29,9 @@ const Orders = () => {
 
 
   return (
-    <Layout title={"Your Orders"}>
+    <Layout title={"Your Orders - E-wish"}>
 
-        <div className="container-fluid p-3 m-3">
+        <div className="container-fluid p-3 m-3 dashboard">
             <div className="row">
 
                 <div className="col-md-3">
@@ -47,22 +47,22 @@ const Orders = () => {
                                     <table className='table'>
                                         <thead>
                                             <tr>
-                                                <td scope='col'>#</td>
-                                                <td scope='col'>Status</td>
-                                                <td scope='col'>Buyer</td>
-                                                <td scope='col'>Date</td>
-                                                <td scope='col'>Payments</td>
-                                                <td scope='col'>Quantity</td>
+                                                <th scope='col'>#</th>
+                                                <th scope='col'>Status</th>
+                                                <th scope='col'>Buyer</th>
+                                                <th scope='col'>Date</th>
+                                                <th scope='col'>Payments</th>
+                                                <th scope='col'>Quantity</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th>{i+1}</th>
-                                                <th>{o?.status}</th>
-                                                <th>{o?.buyer?.name}</th>
-                                                <th>{moment(o?.createdAt).fromNow()}</th>
-                                                <th>{o?.payment.success ? "Success" : "Failed"}</th>
-                                                <th>{o?.products?.length}</th>
+                                                <td>{i+1}</td>
+                                                <td>{o?.status}</td>
+                                                <td>{o?.buyer?.name}</td>
+                                                <td>{moment(o?.createdAt).fromNow()}</td>
+                                                <td>{o?.payment.success ? "Success" : "Failed"}</td>
+                                                <td>{o?.products?.length}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -72,7 +72,7 @@ const Orders = () => {
                                         (
                                             <div className="row card flex-row" key={p._id}>
                                                 <div className="col-md-4">
-                                                    <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width="100%" height={'130px'} />
+                                                    <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width="100px" height={'100px'} />
                                                 </div>
                                                 <div className="col-md-4">
                                                     <p> {p.name} </p>

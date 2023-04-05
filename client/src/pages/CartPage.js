@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import DropIn from 'braintree-web-drop-in-react'
 import axios from 'axios'
 import  toast  from 'react-hot-toast'
-
+import "../styles/CartStyles.css";
 
 
 
@@ -29,7 +29,7 @@ const CartPage = () => {
             
             let total = 0;
             cart?.map((item) => {total = total +item.price});
-            return total.toLocaleString("en-US", {style: "currency", currency: "USD"});
+            return total.toLocaleString("en-IN", {style: "currency", currency: "INR"});
         } catch (error) {
             console.log(error)
         }
@@ -90,8 +90,8 @@ const CartPage = () => {
 
 
   return (
-    <Layout>
-        <div className="cart-page">
+    <Layout title={"CheckOut- E wish"}>
+        <div className="cart-page" style={{ minHeight: "80vh" }}>
 
             <div className="row">
                 <div className="col-md-12">
@@ -106,7 +106,7 @@ const CartPage = () => {
 
             <div className='container'>
                 <div className="row">
-                    <div className="col-md-7 p-0 m-0">
+                    <div className="col-md-7 p-3 m-0">
                         {cart?.map((p) => (
                             <div className="row card flex-row" key={p._id}>
                                 <div className="col-md-4">
@@ -162,7 +162,7 @@ const CartPage = () => {
                                     }}
                                     onInstance={instance => setInstance(instance)}
                                     />
-                                    <button className='btn btn-primary' onClick={handlePayment} disabled ={loading || !instance || !auth?.user?.address} > {loading ? "Processing ...." : "Make Payment"}</button>
+                                    <button className='btn btn-primary mb-3' onClick={handlePayment} disabled ={loading || !instance || !auth?.user?.address} > {loading ? "Processing ...." : "Make Payment"}</button>
                                 </>
                                 )}
                         </div>
