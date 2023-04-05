@@ -135,13 +135,16 @@
 
 
 .cat-btn {
-  padding: 40px 0px;
+  padding: 20px 30px;
   font-size: 24px;
   text-transform: uppercase;
+  background-color: lightgoldenrodyellow;
+  border-radius: 20px;
+  border: 1px solid;
 }
 .cat-btn:hover {
-  background-color: #434343;
-  color: white;
+  background-color: #8cd660;
+  color: rgb(5, 50, 59) !important;
 }
 
 
