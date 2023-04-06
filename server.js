@@ -13,6 +13,7 @@ import categoryRoutes from './routes/categoryRoutes.js'
 import cors from "cors"
 import productRoutes from './routes/productRoutes.js'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 //Configure .env file
 dotenv.config();
@@ -22,6 +23,14 @@ connectDB();
 
 // Rest Object
 const app = express();
+
+
+// Es module __dirname issue fix
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename);
+
+
+
 
 //Middleware
 app.use(cors())
