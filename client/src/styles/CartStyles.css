@@ -27,3 +27,15 @@
   text-align: center;
   /* margin-top: -140px !important; */
 }
+
+
+@media screen and (max-width: 768px) {
+  .cart-page .card {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px !important;
+    height: 45vh !important;
+    margin-bottom: 10px !important;
+  }
+  
+}

@@ -4,7 +4,7 @@ import Layout from "./../components/Layout/Layout";
 const Policy = () => {
   return (
     <Layout title={"Privacy Policy"}>
-      <div className="row contactus "  style={{ minHeight: "134vh" }}>
+      <div className="row contactus "  style={{ minHeight: "210vh" }}>
       <h5 className="text-center mb-1 mt-3">At E-Wish, we take your privacy and the security of your personal information very seriously.<tr /> We are committed to protecting your personal information and ensuring that it is used only in accordance with this privacy policy.</h5>
         <div className="col-md-6 ">
           <img className="mb-1" src="/images/pv3.jpg" alt="Privacy matters" style={{ width: "100%" }}/>
