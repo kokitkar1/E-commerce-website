@@ -4,7 +4,7 @@ import Layout from "./../components/Layout/Layout";
 const About = () => {
   return (
     <Layout title={"About us - E wish"}>
-      <div className="row contactus " style={{ minHeight: "75vh" }}>
+      <div className="row contactus " style={{ minHeight: "110vh" }}>
         <div className="col-md-6 ">
           <img
             src="/images/about.jpeg"
