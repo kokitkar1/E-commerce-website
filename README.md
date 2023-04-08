@@ -15,13 +15,13 @@ MongoDB use as database
 In the file you to do run npm install in api as well as client
 then check .env veriable you need to add just create .env and add following details
 
-PORT
-DEV_MODE
-MONGO_URL
-JWT_SECRET
-BRAINTREE_MARCHANT_ID
-BRAINTREE_PUBLIC_KEY
-BRAINTREE_PRIVATE_KEY
+PORT  |
+DEV_MODE  |
+MONGO_URL  |
+JWT_SECRET  |
+BRAINTREE_MARCHANT_ID  |
+BRAINTREE_PUBLIC_KEY  |
+BRAINTREE_PRIVATE_KEY  |
 DEPLOYMENT
 
 
